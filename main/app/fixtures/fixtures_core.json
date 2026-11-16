@@ -1,0 +1,2805 @@
+[
+  {
+    "model": "app.studio",
+    "pk": 1,
+    "fields": {
+      "name": "ФотоГрад",
+      "address": "г. Ульяновск, ул. Гончарова, 28",
+      "contact_phone": "+7 (8422) 41-15-28",
+      "description": "Три зала, парковка, кофейня в холле.",
+      "is_active": true
+    }
+  },
+  {
+    "model": "app.studio",
+    "pk": 2,
+    "fields": {
+      "name": "Свет и Тень",
+      "address": "г. Ульяновск, пр. Созидателей, 116",
+      "contact_phone": "+7 (8422) 55-70-31",
+      "description": "Профессиональный свет, гримёрная комната.",
+      "is_active": true
+    }
+  },
+  {
+    "model": "app.studio",
+    "pk": 3,
+    "fields": {
+      "name": "Апельсин",
+      "address": "г. Ульяновск, ул. Минаева, 9",
+      "contact_phone": "+7 (8422) 30-62-14",
+      "description": "Уютные залы для семейных и детских съёмок.",
+      "is_active": true
+    }
+  },
+  {
+    "model": "app.hall",
+    "pk": 1,
+    "fields": {
+      "studio": 1,
+      "name": "Белый циклорам",
+      "capacity": 12,
+      "hourly_rate": "2800.00",
+      "description": ""
+    }
+  },
+  {
+    "model": "app.hall",
+    "pk": 2,
+    "fields": {
+      "studio": 1,
+      "name": "Чёрный фон",
+      "capacity": 8,
+      "hourly_rate": "2200.00",
+      "description": ""
+    }
+  },
+  {
+    "model": "app.hall",
+    "pk": 3,
+    "fields": {
+      "studio": 1,
+      "name": "Лофт-брик",
+      "capacity": 10,
+      "hourly_rate": "1900.00",
+      "description": ""
+    }
+  },
+  {
+    "model": "app.hall",
+    "pk": 4,
+    "fields": {
+      "studio": 2,
+      "name": "Индастриал-сцена",
+      "capacity": 15,
+      "hourly_rate": "3500.00",
+      "description": ""
+    }
+  },
+  {
+    "model": "app.hall",
+    "pk": 5,
+    "fields": {
+      "studio": 2,
+      "name": "Ретро-винтаж",
+      "capacity": 6,
+      "hourly_rate": "1700.00",
+      "description": ""
+    }
+  },
+  {
+    "model": "app.hall",
+    "pk": 6,
+    "fields": {
+      "studio": 2,
+      "name": "Минимализм",
+      "capacity": 9,
+      "hourly_rate": "2400.00",
+      "description": ""
+    }
+  },
+  {
+    "model": "app.hall",
+    "pk": 7,
+    "fields": {
+      "studio": 3,
+      "name": "Панорамный зал",
+      "capacity": 20,
+      "hourly_rate": "4000.00",
+      "description": ""
+    }
+  },
+  {
+    "model": "app.hall",
+    "pk": 8,
+    "fields": {
+      "studio": 3,
+      "name": "Утренний свет",
+      "capacity": 5,
+      "hourly_rate": "1500.00",
+      "description": ""
+    }
+  },
+  {
+    "model": "app.client",
+    "pk": 1,
+    "fields": {
+      "full_name": "Анна Смирнова",
+      "phone": "+7-9560475952",
+      "email": "client01@mail.ru",
+      "created_at": "2026-07-01T10:00:00"
+    }
+  },
+  {
+    "model": "app.client",
+    "pk": 2,
+    "fields": {
+      "full_name": "Дмитрий Козлов",
+      "phone": "+7-9866177624",
+      "email": "client02@mail.ru",
+      "created_at": "2026-07-30T10:00:00"
+    }
+  },
+  {
+    "model": "app.client",
+    "pk": 3,
+    "fields": {
+      "full_name": "Мария Орлова",
+      "phone": "+7-9392585221",
+      "email": "client03@mail.ru",
+      "created_at": "2026-08-02T10:00:00"
+    }
+  },
+  {
+    "model": "app.client",
+    "pk": 4,
+    "fields": {
+      "full_name": "Иван Петров",
+      "phone": "+7-9187570127",
+      "email": "client04@mail.ru",
+      "created_at": "2026-05-30T10:00:00"
+    }
+  },
+  {
+    "model": "app.client",
+    "pk": 5,
+    "fields": {
+      "full_name": "Екатерина Волкова",
+      "phone": "+7-9710154651",
+      "email": "client05@mail.ru",
+      "created_at": "2026-08-05T10:00:00"
+    }
+  },
+  {
+    "model": "app.client",
+    "pk": 6,
+    "fields": {
+      "full_name": "Алексей Морозов",
+      "phone": "+7-9118285593",
+      "email": "client06@mail.ru",
+      "created_at": "2026-10-09T10:00:00"
+    }
+  },
+  {
+    "model": "app.client",
+    "pk": 7,
+    "fields": {
+      "full_name": "Ольга Кузнецова",
+      "phone": "+7-9267257673",
+      "email": "client07@mail.ru",
+      "created_at": "2026-07-09T10:00:00"
+    }
+  },
+  {
+    "model": "app.client",
+    "pk": 8,
+    "fields": {
+      "full_name": "Сергей Никитин",
+      "phone": "+7-9875299395",
+      "email": "client08@mail.ru",
+      "created_at": "2026-06-30T10:00:00"
+    }
+  },
+  {
+    "model": "app.client",
+    "pk": 9,
+    "fields": {
+      "full_name": "Наталья Фомина",
+      "phone": "+7-9270995004",
+      "email": "client09@mail.ru",
+      "created_at": "2026-06-09T10:00:00"
+    }
+  },
+  {
+    "model": "app.client",
+    "pk": 10,
+    "fields": {
+      "full_name": "Павел Гусев",
+      "phone": "+7-9861542487",
+      "email": "client10@mail.ru",
+      "created_at": "2026-07-26T10:00:00"
+    }
+  },
+  {
+    "model": "app.client",
+    "pk": 11,
+    "fields": {
+      "full_name": "Ирина Белова",
+      "phone": "+7-9687758275",
+      "email": "client11@mail.ru",
+      "created_at": "2026-07-05T10:00:00"
+    }
+  },
+  {
+    "model": "app.client",
+    "pk": 12,
+    "fields": {
+      "full_name": "Артём Соколов",
+      "phone": "+7-9147683960",
+      "email": "client12@mail.ru",
+      "created_at": "2026-05-27T10:00:00"
+    }
+  },
+  {
+    "model": "app.client",
+    "pk": 13,
+    "fields": {
+      "full_name": "Юлия Зайцева",
+      "phone": "+7-9066779006",
+      "email": "client13@mail.ru",
+      "created_at": "2026-09-10T10:00:00"
+    }
+  },
+  {
+    "model": "app.client",
+    "pk": 14,
+    "fields": {
+      "full_name": "Максим Рябов",
+      "phone": "+7-9872532264",
+      "email": "client14@mail.ru",
+      "created_at": "2026-08-26T10:00:00"
+    }
+  },
+  {
+    "model": "app.client",
+    "pk": 15,
+    "fields": {
+      "full_name": "Дарья Крылова",
+      "phone": "+7-9162044259",
+      "email": "client15@mail.ru",
+      "created_at": "2026-06-01T10:00:00"
+    }
+  },
+  {
+    "model": "app.equipment",
+    "pk": 1,
+    "fields": {
+      "name": "Софтбокс 120 см",
+      "category": "Свет",
+      "hourly_price": "350.00"
+    }
+  },
+  {
+    "model": "app.equipment",
+    "pk": 2,
+    "fields": {
+      "name": "RGB-светильник",
+      "category": "Свет",
+      "hourly_price": "400.00"
+    }
+  },
+  {
+    "model": "app.equipment",
+    "pk": 3,
+    "fields": {
+      "name": "Отражатель 5-в-1",
+      "category": "Свет",
+      "hourly_price": "120.00"
+    }
+  },
+  {
+    "model": "app.equipment",
+    "pk": 4,
+    "fields": {
+      "name": "Цветные гели (набор)",
+      "category": "Свет",
+      "hourly_price": "180.00"
+    }
+  },
+  {
+    "model": "app.equipment",
+    "pk": 5,
+    "fields": {
+      "name": "Фон бумажный белый",
+      "category": "Фон",
+      "hourly_price": "200.00"
+    }
+  },
+  {
+    "model": "app.equipment",
+    "pk": 6,
+    "fields": {
+      "name": "Дым-машина",
+      "category": "Эффекты",
+      "hourly_price": "500.00"
+    }
+  },
+  {
+    "model": "app.equipment",
+    "pk": 7,
+    "fields": {
+      "name": "Проектор",
+      "category": "Эффекты",
+      "hourly_price": "300.00"
+    }
+  },
+  {
+    "model": "app.equipment",
+    "pk": 8,
+    "fields": {
+      "name": "Штатив Manfrotto",
+      "category": "Опора",
+      "hourly_price": "250.00"
+    }
+  },
+  {
+    "model": "app.equipment",
+    "pk": 9,
+    "fields": {
+      "name": "Веер для съёмки",
+      "category": "Реквизит",
+      "hourly_price": "100.00"
+    }
+  },
+  {
+    "model": "app.equipment",
+    "pk": 10,
+    "fields": {
+      "name": "Муляж камеры (реквизит)",
+      "category": "Реквизит",
+      "hourly_price": "90.00"
+    }
+  },
+  {
+    "model": "app.hallequipment",
+    "pk": 1,
+    "fields": {
+      "hall": 1,
+      "equipment": 1,
+      "quantity": 1,
+      "note": ""
+    }
+  },
+  {
+    "model": "app.hallequipment",
+    "pk": 2,
+    "fields": {
+      "hall": 1,
+      "equipment": 3,
+      "quantity": 1,
+      "note": ""
+    }
+  },
+  {
+    "model": "app.hallequipment",
+    "pk": 3,
+    "fields": {
+      "hall": 1,
+      "equipment": 5,
+      "quantity": 1,
+      "note": ""
+    }
+  },
+  {
+    "model": "app.hallequipment",
+    "pk": 4,
+    "fields": {
+      "hall": 1,
+      "equipment": 9,
+      "quantity": 1,
+      "note": ""
+    }
+  },
+  {
+    "model": "app.hallequipment",
+    "pk": 5,
+    "fields": {
+      "hall": 2,
+      "equipment": 1,
+      "quantity": 2,
+      "note": ""
+    }
+  },
+  {
+    "model": "app.hallequipment",
+    "pk": 6,
+    "fields": {
+      "hall": 2,
+      "equipment": 2,
+      "quantity": 1,
+      "note": ""
+    }
+  },
+  {
+    "model": "app.hallequipment",
+    "pk": 7,
+    "fields": {
+      "hall": 2,
+      "equipment": 4,
+      "quantity": 1,
+      "note": ""
+    }
+  },
+  {
+    "model": "app.hallequipment",
+    "pk": 8,
+    "fields": {
+      "hall": 3,
+      "equipment": 2,
+      "quantity": 2,
+      "note": ""
+    }
+  },
+  {
+    "model": "app.hallequipment",
+    "pk": 9,
+    "fields": {
+      "hall": 3,
+      "equipment": 5,
+      "quantity": 1,
+      "note": ""
+    }
+  },
+  {
+    "model": "app.hallequipment",
+    "pk": 10,
+    "fields": {
+      "hall": 3,
+      "equipment": 9,
+      "quantity": 1,
+      "note": ""
+    }
+  },
+  {
+    "model": "app.hallequipment",
+    "pk": 11,
+    "fields": {
+      "hall": 3,
+      "equipment": 10,
+      "quantity": 2,
+      "note": ""
+    }
+  },
+  {
+    "model": "app.hallequipment",
+    "pk": 12,
+    "fields": {
+      "hall": 4,
+      "equipment": 1,
+      "quantity": 2,
+      "note": ""
+    }
+  },
+  {
+    "model": "app.hallequipment",
+    "pk": 13,
+    "fields": {
+      "hall": 4,
+      "equipment": 4,
+      "quantity": 1,
+      "note": ""
+    }
+  },
+  {
+    "model": "app.hallequipment",
+    "pk": 14,
+    "fields": {
+      "hall": 4,
+      "equipment": 6,
+      "quantity": 1,
+      "note": ""
+    }
+  },
+  {
+    "model": "app.hallequipment",
+    "pk": 15,
+    "fields": {
+      "hall": 5,
+      "equipment": 3,
+      "quantity": 1,
+      "note": ""
+    }
+  },
+  {
+    "model": "app.hallequipment",
+    "pk": 16,
+    "fields": {
+      "hall": 5,
+      "equipment": 7,
+      "quantity": 1,
+      "note": ""
+    }
+  },
+  {
+    "model": "app.hallequipment",
+    "pk": 17,
+    "fields": {
+      "hall": 5,
+      "equipment": 8,
+      "quantity": 2,
+      "note": ""
+    }
+  },
+  {
+    "model": "app.hallequipment",
+    "pk": 18,
+    "fields": {
+      "hall": 6,
+      "equipment": 1,
+      "quantity": 2,
+      "note": ""
+    }
+  },
+  {
+    "model": "app.hallequipment",
+    "pk": 19,
+    "fields": {
+      "hall": 6,
+      "equipment": 4,
+      "quantity": 1,
+      "note": ""
+    }
+  },
+  {
+    "model": "app.hallequipment",
+    "pk": 20,
+    "fields": {
+      "hall": 6,
+      "equipment": 5,
+      "quantity": 2,
+      "note": ""
+    }
+  },
+  {
+    "model": "app.hallequipment",
+    "pk": 21,
+    "fields": {
+      "hall": 6,
+      "equipment": 9,
+      "quantity": 2,
+      "note": ""
+    }
+  },
+  {
+    "model": "app.hallequipment",
+    "pk": 22,
+    "fields": {
+      "hall": 7,
+      "equipment": 2,
+      "quantity": 2,
+      "note": ""
+    }
+  },
+  {
+    "model": "app.hallequipment",
+    "pk": 23,
+    "fields": {
+      "hall": 7,
+      "equipment": 6,
+      "quantity": 2,
+      "note": ""
+    }
+  },
+  {
+    "model": "app.hallequipment",
+    "pk": 24,
+    "fields": {
+      "hall": 7,
+      "equipment": 7,
+      "quantity": 1,
+      "note": ""
+    }
+  },
+  {
+    "model": "app.hallequipment",
+    "pk": 25,
+    "fields": {
+      "hall": 8,
+      "equipment": 3,
+      "quantity": 2,
+      "note": ""
+    }
+  },
+  {
+    "model": "app.hallequipment",
+    "pk": 26,
+    "fields": {
+      "hall": 8,
+      "equipment": 8,
+      "quantity": 1,
+      "note": ""
+    }
+  },
+  {
+    "model": "app.hallequipment",
+    "pk": 27,
+    "fields": {
+      "hall": 8,
+      "equipment": 9,
+      "quantity": 2,
+      "note": ""
+    }
+  },
+  {
+    "model": "app.slot",
+    "pk": 1,
+    "fields": {
+      "hall": 1,
+      "date": "2026-10-15",
+      "start_time": "16:00",
+      "end_time": "18:00",
+      "status": "open"
+    }
+  },
+  {
+    "model": "app.slot",
+    "pk": 2,
+    "fields": {
+      "hall": 1,
+      "date": "2026-10-16",
+      "start_time": "16:00",
+      "end_time": "18:00",
+      "status": "booked"
+    }
+  },
+  {
+    "model": "app.slot",
+    "pk": 3,
+    "fields": {
+      "hall": 1,
+      "date": "2026-10-18",
+      "start_time": "14:00",
+      "end_time": "16:00",
+      "status": "open"
+    }
+  },
+  {
+    "model": "app.slot",
+    "pk": 4,
+    "fields": {
+      "hall": 1,
+      "date": "2026-10-18",
+      "start_time": "16:00",
+      "end_time": "18:00",
+      "status": "open"
+    }
+  },
+  {
+    "model": "app.slot",
+    "pk": 5,
+    "fields": {
+      "hall": 1,
+      "date": "2026-10-20",
+      "start_time": "18:00",
+      "end_time": "20:00",
+      "status": "booked"
+    }
+  },
+  {
+    "model": "app.slot",
+    "pk": 6,
+    "fields": {
+      "hall": 1,
+      "date": "2026-10-22",
+      "start_time": "10:00",
+      "end_time": "12:00",
+      "status": "open"
+    }
+  },
+  {
+    "model": "app.slot",
+    "pk": 7,
+    "fields": {
+      "hall": 1,
+      "date": "2026-10-24",
+      "start_time": "16:00",
+      "end_time": "18:00",
+      "status": "booked"
+    }
+  },
+  {
+    "model": "app.slot",
+    "pk": 8,
+    "fields": {
+      "hall": 1,
+      "date": "2026-10-30",
+      "start_time": "10:00",
+      "end_time": "12:00",
+      "status": "booked"
+    }
+  },
+  {
+    "model": "app.slot",
+    "pk": 9,
+    "fields": {
+      "hall": 1,
+      "date": "2026-10-30",
+      "start_time": "18:00",
+      "end_time": "20:00",
+      "status": "open"
+    }
+  },
+  {
+    "model": "app.slot",
+    "pk": 10,
+    "fields": {
+      "hall": 1,
+      "date": "2026-11-03",
+      "start_time": "16:00",
+      "end_time": "18:00",
+      "status": "open"
+    }
+  },
+  {
+    "model": "app.slot",
+    "pk": 11,
+    "fields": {
+      "hall": 1,
+      "date": "2026-11-05",
+      "start_time": "18:00",
+      "end_time": "20:00",
+      "status": "open"
+    }
+  },
+  {
+    "model": "app.slot",
+    "pk": 12,
+    "fields": {
+      "hall": 1,
+      "date": "2026-11-07",
+      "start_time": "18:00",
+      "end_time": "20:00",
+      "status": "open"
+    }
+  },
+  {
+    "model": "app.slot",
+    "pk": 13,
+    "fields": {
+      "hall": 1,
+      "date": "2026-11-14",
+      "start_time": "18:00",
+      "end_time": "20:00",
+      "status": "booked"
+    }
+  },
+  {
+    "model": "app.slot",
+    "pk": 14,
+    "fields": {
+      "hall": 1,
+      "date": "2026-11-16",
+      "start_time": "14:00",
+      "end_time": "16:00",
+      "status": "booked"
+    }
+  },
+  {
+    "model": "app.slot",
+    "pk": 15,
+    "fields": {
+      "hall": 1,
+      "date": "2026-11-19",
+      "start_time": "12:00",
+      "end_time": "14:00",
+      "status": "open"
+    }
+  },
+  {
+    "model": "app.slot",
+    "pk": 16,
+    "fields": {
+      "hall": 2,
+      "date": "2026-10-16",
+      "start_time": "16:00",
+      "end_time": "18:00",
+      "status": "booked"
+    }
+  },
+  {
+    "model": "app.slot",
+    "pk": 17,
+    "fields": {
+      "hall": 2,
+      "date": "2026-10-18",
+      "start_time": "14:00",
+      "end_time": "16:00",
+      "status": "booked"
+    }
+  },
+  {
+    "model": "app.slot",
+    "pk": 18,
+    "fields": {
+      "hall": 2,
+      "date": "2026-10-21",
+      "start_time": "18:00",
+      "end_time": "20:00",
+      "status": "booked"
+    }
+  },
+  {
+    "model": "app.slot",
+    "pk": 19,
+    "fields": {
+      "hall": 2,
+      "date": "2026-10-23",
+      "start_time": "14:00",
+      "end_time": "16:00",
+      "status": "booked"
+    }
+  },
+  {
+    "model": "app.slot",
+    "pk": 20,
+    "fields": {
+      "hall": 2,
+      "date": "2026-10-25",
+      "start_time": "14:00",
+      "end_time": "16:00",
+      "status": "open"
+    }
+  },
+  {
+    "model": "app.slot",
+    "pk": 21,
+    "fields": {
+      "hall": 2,
+      "date": "2026-11-01",
+      "start_time": "10:00",
+      "end_time": "12:00",
+      "status": "booked"
+    }
+  },
+  {
+    "model": "app.slot",
+    "pk": 22,
+    "fields": {
+      "hall": 2,
+      "date": "2026-11-01",
+      "start_time": "12:00",
+      "end_time": "14:00",
+      "status": "booked"
+    }
+  },
+  {
+    "model": "app.slot",
+    "pk": 23,
+    "fields": {
+      "hall": 2,
+      "date": "2026-11-01",
+      "start_time": "16:00",
+      "end_time": "18:00",
+      "status": "booked"
+    }
+  },
+  {
+    "model": "app.slot",
+    "pk": 24,
+    "fields": {
+      "hall": 2,
+      "date": "2026-11-05",
+      "start_time": "10:00",
+      "end_time": "12:00",
+      "status": "open"
+    }
+  },
+  {
+    "model": "app.slot",
+    "pk": 25,
+    "fields": {
+      "hall": 2,
+      "date": "2026-11-06",
+      "start_time": "14:00",
+      "end_time": "16:00",
+      "status": "open"
+    }
+  },
+  {
+    "model": "app.slot",
+    "pk": 26,
+    "fields": {
+      "hall": 2,
+      "date": "2026-11-07",
+      "start_time": "10:00",
+      "end_time": "12:00",
+      "status": "booked"
+    }
+  },
+  {
+    "model": "app.slot",
+    "pk": 27,
+    "fields": {
+      "hall": 2,
+      "date": "2026-11-18",
+      "start_time": "18:00",
+      "end_time": "20:00",
+      "status": "booked"
+    }
+  },
+  {
+    "model": "app.slot",
+    "pk": 28,
+    "fields": {
+      "hall": 2,
+      "date": "2026-11-21",
+      "start_time": "14:00",
+      "end_time": "16:00",
+      "status": "open"
+    }
+  },
+  {
+    "model": "app.slot",
+    "pk": 29,
+    "fields": {
+      "hall": 2,
+      "date": "2026-11-22",
+      "start_time": "18:00",
+      "end_time": "20:00",
+      "status": "open"
+    }
+  },
+  {
+    "model": "app.slot",
+    "pk": 30,
+    "fields": {
+      "hall": 2,
+      "date": "2026-11-26",
+      "start_time": "14:00",
+      "end_time": "16:00",
+      "status": "open"
+    }
+  },
+  {
+    "model": "app.slot",
+    "pk": 31,
+    "fields": {
+      "hall": 3,
+      "date": "2026-10-18",
+      "start_time": "12:00",
+      "end_time": "14:00",
+      "status": "open"
+    }
+  },
+  {
+    "model": "app.slot",
+    "pk": 32,
+    "fields": {
+      "hall": 3,
+      "date": "2026-10-26",
+      "start_time": "12:00",
+      "end_time": "14:00",
+      "status": "open"
+    }
+  },
+  {
+    "model": "app.slot",
+    "pk": 33,
+    "fields": {
+      "hall": 3,
+      "date": "2026-10-27",
+      "start_time": "14:00",
+      "end_time": "16:00",
+      "status": "booked"
+    }
+  },
+  {
+    "model": "app.slot",
+    "pk": 34,
+    "fields": {
+      "hall": 3,
+      "date": "2026-10-28",
+      "start_time": "10:00",
+      "end_time": "12:00",
+      "status": "booked"
+    }
+  },
+  {
+    "model": "app.slot",
+    "pk": 35,
+    "fields": {
+      "hall": 3,
+      "date": "2026-10-31",
+      "start_time": "10:00",
+      "end_time": "12:00",
+      "status": "booked"
+    }
+  },
+  {
+    "model": "app.slot",
+    "pk": 36,
+    "fields": {
+      "hall": 3,
+      "date": "2026-10-31",
+      "start_time": "12:00",
+      "end_time": "14:00",
+      "status": "booked"
+    }
+  },
+  {
+    "model": "app.slot",
+    "pk": 37,
+    "fields": {
+      "hall": 3,
+      "date": "2026-11-04",
+      "start_time": "14:00",
+      "end_time": "16:00",
+      "status": "open"
+    }
+  },
+  {
+    "model": "app.slot",
+    "pk": 38,
+    "fields": {
+      "hall": 3,
+      "date": "2026-11-09",
+      "start_time": "16:00",
+      "end_time": "18:00",
+      "status": "open"
+    }
+  },
+  {
+    "model": "app.slot",
+    "pk": 39,
+    "fields": {
+      "hall": 3,
+      "date": "2026-11-15",
+      "start_time": "10:00",
+      "end_time": "12:00",
+      "status": "open"
+    }
+  },
+  {
+    "model": "app.slot",
+    "pk": 40,
+    "fields": {
+      "hall": 3,
+      "date": "2026-11-17",
+      "start_time": "12:00",
+      "end_time": "14:00",
+      "status": "open"
+    }
+  },
+  {
+    "model": "app.slot",
+    "pk": 41,
+    "fields": {
+      "hall": 3,
+      "date": "2026-11-18",
+      "start_time": "14:00",
+      "end_time": "16:00",
+      "status": "open"
+    }
+  },
+  {
+    "model": "app.slot",
+    "pk": 42,
+    "fields": {
+      "hall": 3,
+      "date": "2026-11-21",
+      "start_time": "16:00",
+      "end_time": "18:00",
+      "status": "open"
+    }
+  },
+  {
+    "model": "app.slot",
+    "pk": 43,
+    "fields": {
+      "hall": 3,
+      "date": "2026-11-23",
+      "start_time": "18:00",
+      "end_time": "20:00",
+      "status": "open"
+    }
+  },
+  {
+    "model": "app.slot",
+    "pk": 44,
+    "fields": {
+      "hall": 3,
+      "date": "2026-11-24",
+      "start_time": "10:00",
+      "end_time": "12:00",
+      "status": "open"
+    }
+  },
+  {
+    "model": "app.slot",
+    "pk": 45,
+    "fields": {
+      "hall": 3,
+      "date": "2026-11-27",
+      "start_time": "10:00",
+      "end_time": "12:00",
+      "status": "open"
+    }
+  },
+  {
+    "model": "app.slot",
+    "pk": 46,
+    "fields": {
+      "hall": 4,
+      "date": "2026-10-18",
+      "start_time": "16:00",
+      "end_time": "18:00",
+      "status": "open"
+    }
+  },
+  {
+    "model": "app.slot",
+    "pk": 47,
+    "fields": {
+      "hall": 4,
+      "date": "2026-10-19",
+      "start_time": "16:00",
+      "end_time": "18:00",
+      "status": "open"
+    }
+  },
+  {
+    "model": "app.slot",
+    "pk": 48,
+    "fields": {
+      "hall": 4,
+      "date": "2026-10-25",
+      "start_time": "14:00",
+      "end_time": "16:00",
+      "status": "open"
+    }
+  },
+  {
+    "model": "app.slot",
+    "pk": 49,
+    "fields": {
+      "hall": 4,
+      "date": "2026-10-29",
+      "start_time": "18:00",
+      "end_time": "20:00",
+      "status": "open"
+    }
+  },
+  {
+    "model": "app.slot",
+    "pk": 50,
+    "fields": {
+      "hall": 4,
+      "date": "2026-10-31",
+      "start_time": "16:00",
+      "end_time": "18:00",
+      "status": "open"
+    }
+  },
+  {
+    "model": "app.slot",
+    "pk": 51,
+    "fields": {
+      "hall": 4,
+      "date": "2026-10-31",
+      "start_time": "18:00",
+      "end_time": "20:00",
+      "status": "open"
+    }
+  },
+  {
+    "model": "app.slot",
+    "pk": 52,
+    "fields": {
+      "hall": 4,
+      "date": "2026-11-10",
+      "start_time": "10:00",
+      "end_time": "12:00",
+      "status": "open"
+    }
+  },
+  {
+    "model": "app.slot",
+    "pk": 53,
+    "fields": {
+      "hall": 4,
+      "date": "2026-11-14",
+      "start_time": "10:00",
+      "end_time": "12:00",
+      "status": "open"
+    }
+  },
+  {
+    "model": "app.slot",
+    "pk": 54,
+    "fields": {
+      "hall": 4,
+      "date": "2026-11-15",
+      "start_time": "12:00",
+      "end_time": "14:00",
+      "status": "open"
+    }
+  },
+  {
+    "model": "app.slot",
+    "pk": 55,
+    "fields": {
+      "hall": 4,
+      "date": "2026-11-17",
+      "start_time": "16:00",
+      "end_time": "18:00",
+      "status": "open"
+    }
+  },
+  {
+    "model": "app.slot",
+    "pk": 56,
+    "fields": {
+      "hall": 4,
+      "date": "2026-11-18",
+      "start_time": "10:00",
+      "end_time": "12:00",
+      "status": "open"
+    }
+  },
+  {
+    "model": "app.slot",
+    "pk": 57,
+    "fields": {
+      "hall": 4,
+      "date": "2026-11-18",
+      "start_time": "12:00",
+      "end_time": "14:00",
+      "status": "open"
+    }
+  },
+  {
+    "model": "app.slot",
+    "pk": 58,
+    "fields": {
+      "hall": 4,
+      "date": "2026-11-19",
+      "start_time": "16:00",
+      "end_time": "18:00",
+      "status": "open"
+    }
+  },
+  {
+    "model": "app.slot",
+    "pk": 59,
+    "fields": {
+      "hall": 4,
+      "date": "2026-11-21",
+      "start_time": "16:00",
+      "end_time": "18:00",
+      "status": "open"
+    }
+  },
+  {
+    "model": "app.slot",
+    "pk": 60,
+    "fields": {
+      "hall": 4,
+      "date": "2026-11-28",
+      "start_time": "14:00",
+      "end_time": "16:00",
+      "status": "open"
+    }
+  },
+  {
+    "model": "app.slot",
+    "pk": 61,
+    "fields": {
+      "hall": 5,
+      "date": "2026-10-18",
+      "start_time": "14:00",
+      "end_time": "16:00",
+      "status": "open"
+    }
+  },
+  {
+    "model": "app.slot",
+    "pk": 62,
+    "fields": {
+      "hall": 5,
+      "date": "2026-10-20",
+      "start_time": "18:00",
+      "end_time": "20:00",
+      "status": "open"
+    }
+  },
+  {
+    "model": "app.slot",
+    "pk": 63,
+    "fields": {
+      "hall": 5,
+      "date": "2026-10-27",
+      "start_time": "14:00",
+      "end_time": "16:00",
+      "status": "open"
+    }
+  },
+  {
+    "model": "app.slot",
+    "pk": 64,
+    "fields": {
+      "hall": 5,
+      "date": "2026-10-28",
+      "start_time": "12:00",
+      "end_time": "14:00",
+      "status": "open"
+    }
+  },
+  {
+    "model": "app.slot",
+    "pk": 65,
+    "fields": {
+      "hall": 5,
+      "date": "2026-10-28",
+      "start_time": "14:00",
+      "end_time": "16:00",
+      "status": "open"
+    }
+  },
+  {
+    "model": "app.slot",
+    "pk": 66,
+    "fields": {
+      "hall": 5,
+      "date": "2026-11-07",
+      "start_time": "12:00",
+      "end_time": "14:00",
+      "status": "open"
+    }
+  },
+  {
+    "model": "app.slot",
+    "pk": 67,
+    "fields": {
+      "hall": 5,
+      "date": "2026-11-11",
+      "start_time": "14:00",
+      "end_time": "16:00",
+      "status": "open"
+    }
+  },
+  {
+    "model": "app.slot",
+    "pk": 68,
+    "fields": {
+      "hall": 5,
+      "date": "2026-11-12",
+      "start_time": "18:00",
+      "end_time": "20:00",
+      "status": "open"
+    }
+  },
+  {
+    "model": "app.slot",
+    "pk": 69,
+    "fields": {
+      "hall": 5,
+      "date": "2026-11-14",
+      "start_time": "14:00",
+      "end_time": "16:00",
+      "status": "booked"
+    }
+  },
+  {
+    "model": "app.slot",
+    "pk": 70,
+    "fields": {
+      "hall": 5,
+      "date": "2026-11-17",
+      "start_time": "16:00",
+      "end_time": "18:00",
+      "status": "open"
+    }
+  },
+  {
+    "model": "app.slot",
+    "pk": 71,
+    "fields": {
+      "hall": 5,
+      "date": "2026-11-19",
+      "start_time": "12:00",
+      "end_time": "14:00",
+      "status": "open"
+    }
+  },
+  {
+    "model": "app.slot",
+    "pk": 72,
+    "fields": {
+      "hall": 5,
+      "date": "2026-11-20",
+      "start_time": "18:00",
+      "end_time": "20:00",
+      "status": "open"
+    }
+  },
+  {
+    "model": "app.slot",
+    "pk": 73,
+    "fields": {
+      "hall": 5,
+      "date": "2026-11-21",
+      "start_time": "12:00",
+      "end_time": "14:00",
+      "status": "open"
+    }
+  },
+  {
+    "model": "app.slot",
+    "pk": 74,
+    "fields": {
+      "hall": 5,
+      "date": "2026-11-22",
+      "start_time": "10:00",
+      "end_time": "12:00",
+      "status": "open"
+    }
+  },
+  {
+    "model": "app.slot",
+    "pk": 75,
+    "fields": {
+      "hall": 5,
+      "date": "2026-11-23",
+      "start_time": "14:00",
+      "end_time": "16:00",
+      "status": "open"
+    }
+  },
+  {
+    "model": "app.slot",
+    "pk": 76,
+    "fields": {
+      "hall": 6,
+      "date": "2026-10-15",
+      "start_time": "12:00",
+      "end_time": "14:00",
+      "status": "booked"
+    }
+  },
+  {
+    "model": "app.slot",
+    "pk": 77,
+    "fields": {
+      "hall": 6,
+      "date": "2026-10-15",
+      "start_time": "14:00",
+      "end_time": "16:00",
+      "status": "open"
+    }
+  },
+  {
+    "model": "app.slot",
+    "pk": 78,
+    "fields": {
+      "hall": 6,
+      "date": "2026-10-15",
+      "start_time": "16:00",
+      "end_time": "18:00",
+      "status": "booked"
+    }
+  },
+  {
+    "model": "app.slot",
+    "pk": 79,
+    "fields": {
+      "hall": 6,
+      "date": "2026-10-21",
+      "start_time": "18:00",
+      "end_time": "20:00",
+      "status": "open"
+    }
+  },
+  {
+    "model": "app.slot",
+    "pk": 80,
+    "fields": {
+      "hall": 6,
+      "date": "2026-10-26",
+      "start_time": "16:00",
+      "end_time": "18:00",
+      "status": "booked"
+    }
+  },
+  {
+    "model": "app.slot",
+    "pk": 81,
+    "fields": {
+      "hall": 6,
+      "date": "2026-10-28",
+      "start_time": "10:00",
+      "end_time": "12:00",
+      "status": "booked"
+    }
+  },
+  {
+    "model": "app.slot",
+    "pk": 82,
+    "fields": {
+      "hall": 6,
+      "date": "2026-10-31",
+      "start_time": "12:00",
+      "end_time": "14:00",
+      "status": "open"
+    }
+  },
+  {
+    "model": "app.slot",
+    "pk": 83,
+    "fields": {
+      "hall": 6,
+      "date": "2026-11-01",
+      "start_time": "10:00",
+      "end_time": "12:00",
+      "status": "open"
+    }
+  },
+  {
+    "model": "app.slot",
+    "pk": 84,
+    "fields": {
+      "hall": 6,
+      "date": "2026-11-05",
+      "start_time": "14:00",
+      "end_time": "16:00",
+      "status": "open"
+    }
+  },
+  {
+    "model": "app.slot",
+    "pk": 85,
+    "fields": {
+      "hall": 6,
+      "date": "2026-11-13",
+      "start_time": "16:00",
+      "end_time": "18:00",
+      "status": "booked"
+    }
+  },
+  {
+    "model": "app.slot",
+    "pk": 86,
+    "fields": {
+      "hall": 6,
+      "date": "2026-11-14",
+      "start_time": "16:00",
+      "end_time": "18:00",
+      "status": "booked"
+    }
+  },
+  {
+    "model": "app.slot",
+    "pk": 87,
+    "fields": {
+      "hall": 6,
+      "date": "2026-11-16",
+      "start_time": "12:00",
+      "end_time": "14:00",
+      "status": "booked"
+    }
+  },
+  {
+    "model": "app.slot",
+    "pk": 88,
+    "fields": {
+      "hall": 6,
+      "date": "2026-11-17",
+      "start_time": "10:00",
+      "end_time": "12:00",
+      "status": "open"
+    }
+  },
+  {
+    "model": "app.slot",
+    "pk": 89,
+    "fields": {
+      "hall": 6,
+      "date": "2026-11-18",
+      "start_time": "18:00",
+      "end_time": "20:00",
+      "status": "open"
+    }
+  },
+  {
+    "model": "app.slot",
+    "pk": 90,
+    "fields": {
+      "hall": 6,
+      "date": "2026-11-20",
+      "start_time": "18:00",
+      "end_time": "20:00",
+      "status": "open"
+    }
+  },
+  {
+    "model": "app.slot",
+    "pk": 91,
+    "fields": {
+      "hall": 7,
+      "date": "2026-10-15",
+      "start_time": "18:00",
+      "end_time": "20:00",
+      "status": "open"
+    }
+  },
+  {
+    "model": "app.slot",
+    "pk": 92,
+    "fields": {
+      "hall": 7,
+      "date": "2026-10-16",
+      "start_time": "10:00",
+      "end_time": "12:00",
+      "status": "open"
+    }
+  },
+  {
+    "model": "app.slot",
+    "pk": 93,
+    "fields": {
+      "hall": 7,
+      "date": "2026-10-21",
+      "start_time": "10:00",
+      "end_time": "12:00",
+      "status": "open"
+    }
+  },
+  {
+    "model": "app.slot",
+    "pk": 94,
+    "fields": {
+      "hall": 7,
+      "date": "2026-10-27",
+      "start_time": "18:00",
+      "end_time": "20:00",
+      "status": "open"
+    }
+  },
+  {
+    "model": "app.slot",
+    "pk": 95,
+    "fields": {
+      "hall": 7,
+      "date": "2026-10-29",
+      "start_time": "10:00",
+      "end_time": "12:00",
+      "status": "booked"
+    }
+  },
+  {
+    "model": "app.slot",
+    "pk": 96,
+    "fields": {
+      "hall": 7,
+      "date": "2026-10-31",
+      "start_time": "14:00",
+      "end_time": "16:00",
+      "status": "open"
+    }
+  },
+  {
+    "model": "app.slot",
+    "pk": 97,
+    "fields": {
+      "hall": 7,
+      "date": "2026-11-06",
+      "start_time": "14:00",
+      "end_time": "16:00",
+      "status": "booked"
+    }
+  },
+  {
+    "model": "app.slot",
+    "pk": 98,
+    "fields": {
+      "hall": 7,
+      "date": "2026-11-09",
+      "start_time": "10:00",
+      "end_time": "12:00",
+      "status": "open"
+    }
+  },
+  {
+    "model": "app.slot",
+    "pk": 99,
+    "fields": {
+      "hall": 7,
+      "date": "2026-11-10",
+      "start_time": "16:00",
+      "end_time": "18:00",
+      "status": "open"
+    }
+  },
+  {
+    "model": "app.slot",
+    "pk": 100,
+    "fields": {
+      "hall": 7,
+      "date": "2026-11-11",
+      "start_time": "10:00",
+      "end_time": "12:00",
+      "status": "open"
+    }
+  },
+  {
+    "model": "app.slot",
+    "pk": 101,
+    "fields": {
+      "hall": 7,
+      "date": "2026-11-13",
+      "start_time": "18:00",
+      "end_time": "20:00",
+      "status": "open"
+    }
+  },
+  {
+    "model": "app.slot",
+    "pk": 102,
+    "fields": {
+      "hall": 7,
+      "date": "2026-11-14",
+      "start_time": "14:00",
+      "end_time": "16:00",
+      "status": "booked"
+    }
+  },
+  {
+    "model": "app.slot",
+    "pk": 103,
+    "fields": {
+      "hall": 7,
+      "date": "2026-11-18",
+      "start_time": "10:00",
+      "end_time": "12:00",
+      "status": "booked"
+    }
+  },
+  {
+    "model": "app.slot",
+    "pk": 104,
+    "fields": {
+      "hall": 7,
+      "date": "2026-11-18",
+      "start_time": "18:00",
+      "end_time": "20:00",
+      "status": "open"
+    }
+  },
+  {
+    "model": "app.slot",
+    "pk": 105,
+    "fields": {
+      "hall": 7,
+      "date": "2026-11-23",
+      "start_time": "12:00",
+      "end_time": "14:00",
+      "status": "open"
+    }
+  },
+  {
+    "model": "app.slot",
+    "pk": 106,
+    "fields": {
+      "hall": 8,
+      "date": "2026-10-17",
+      "start_time": "14:00",
+      "end_time": "16:00",
+      "status": "open"
+    }
+  },
+  {
+    "model": "app.slot",
+    "pk": 107,
+    "fields": {
+      "hall": 8,
+      "date": "2026-10-20",
+      "start_time": "16:00",
+      "end_time": "18:00",
+      "status": "open"
+    }
+  },
+  {
+    "model": "app.slot",
+    "pk": 108,
+    "fields": {
+      "hall": 8,
+      "date": "2026-10-22",
+      "start_time": "14:00",
+      "end_time": "16:00",
+      "status": "open"
+    }
+  },
+  {
+    "model": "app.slot",
+    "pk": 109,
+    "fields": {
+      "hall": 8,
+      "date": "2026-10-23",
+      "start_time": "12:00",
+      "end_time": "14:00",
+      "status": "open"
+    }
+  },
+  {
+    "model": "app.slot",
+    "pk": 110,
+    "fields": {
+      "hall": 8,
+      "date": "2026-10-23",
+      "start_time": "18:00",
+      "end_time": "20:00",
+      "status": "booked"
+    }
+  },
+  {
+    "model": "app.slot",
+    "pk": 111,
+    "fields": {
+      "hall": 8,
+      "date": "2026-10-24",
+      "start_time": "14:00",
+      "end_time": "16:00",
+      "status": "open"
+    }
+  },
+  {
+    "model": "app.slot",
+    "pk": 112,
+    "fields": {
+      "hall": 8,
+      "date": "2026-10-30",
+      "start_time": "10:00",
+      "end_time": "12:00",
+      "status": "open"
+    }
+  },
+  {
+    "model": "app.slot",
+    "pk": 113,
+    "fields": {
+      "hall": 8,
+      "date": "2026-10-30",
+      "start_time": "16:00",
+      "end_time": "18:00",
+      "status": "booked"
+    }
+  },
+  {
+    "model": "app.slot",
+    "pk": 114,
+    "fields": {
+      "hall": 8,
+      "date": "2026-11-02",
+      "start_time": "16:00",
+      "end_time": "18:00",
+      "status": "open"
+    }
+  },
+  {
+    "model": "app.slot",
+    "pk": 115,
+    "fields": {
+      "hall": 8,
+      "date": "2026-11-03",
+      "start_time": "12:00",
+      "end_time": "14:00",
+      "status": "booked"
+    }
+  },
+  {
+    "model": "app.slot",
+    "pk": 116,
+    "fields": {
+      "hall": 8,
+      "date": "2026-11-04",
+      "start_time": "14:00",
+      "end_time": "16:00",
+      "status": "booked"
+    }
+  },
+  {
+    "model": "app.slot",
+    "pk": 117,
+    "fields": {
+      "hall": 8,
+      "date": "2026-11-05",
+      "start_time": "10:00",
+      "end_time": "12:00",
+      "status": "booked"
+    }
+  },
+  {
+    "model": "app.slot",
+    "pk": 118,
+    "fields": {
+      "hall": 8,
+      "date": "2026-11-14",
+      "start_time": "14:00",
+      "end_time": "16:00",
+      "status": "open"
+    }
+  },
+  {
+    "model": "app.slot",
+    "pk": 119,
+    "fields": {
+      "hall": 8,
+      "date": "2026-11-16",
+      "start_time": "18:00",
+      "end_time": "20:00",
+      "status": "open"
+    }
+  },
+  {
+    "model": "app.slot",
+    "pk": 120,
+    "fields": {
+      "hall": 8,
+      "date": "2026-11-27",
+      "start_time": "16:00",
+      "end_time": "18:00",
+      "status": "open"
+    }
+  },
+  {
+    "model": "app.booking",
+    "pk": 1,
+    "fields": {
+      "client": 1,
+      "slot": 35,
+      "status": "completed",
+      "total_price": "3800.00",
+      "comment": "",
+      "created_at": "2026-10-26T12:00:00"
+    }
+  },
+  {
+    "model": "app.booking",
+    "pk": 2,
+    "fields": {
+      "client": 2,
+      "slot": 117,
+      "status": "completed",
+      "total_price": "3000.00",
+      "comment": "",
+      "created_at": "2026-10-29T12:00:00"
+    }
+  },
+  {
+    "model": "app.booking",
+    "pk": 3,
+    "fields": {
+      "client": 3,
+      "slot": 18,
+      "status": "completed",
+      "total_price": "4400.00",
+      "comment": "",
+      "created_at": "2026-10-18T12:00:00"
+    }
+  },
+  {
+    "model": "app.booking",
+    "pk": 4,
+    "fields": {
+      "client": 4,
+      "slot": 76,
+      "status": "completed",
+      "total_price": "4800.00",
+      "comment": "",
+      "created_at": "2026-10-08T12:00:00"
+    }
+  },
+  {
+    "model": "app.booking",
+    "pk": 5,
+    "fields": {
+      "client": 5,
+      "slot": 7,
+      "status": "completed",
+      "total_price": "5600.00",
+      "comment": "",
+      "created_at": "2026-10-18T12:00:00"
+    }
+  },
+  {
+    "model": "app.booking",
+    "pk": 6,
+    "fields": {
+      "client": 6,
+      "slot": 23,
+      "status": "completed",
+      "total_price": "4400.00",
+      "comment": "",
+      "created_at": "2026-10-28T12:00:00"
+    }
+  },
+  {
+    "model": "app.booking",
+    "pk": 7,
+    "fields": {
+      "client": 7,
+      "slot": 78,
+      "status": "completed",
+      "total_price": "4800.00",
+      "comment": "",
+      "created_at": "2026-10-11T12:00:00"
+    }
+  },
+  {
+    "model": "app.booking",
+    "pk": 8,
+    "fields": {
+      "client": 8,
+      "slot": 34,
+      "status": "completed",
+      "total_price": "3800.00",
+      "comment": "",
+      "created_at": "2026-10-25T12:00:00"
+    }
+  },
+  {
+    "model": "app.booking",
+    "pk": 9,
+    "fields": {
+      "client": 9,
+      "slot": 36,
+      "status": "completed",
+      "total_price": "3800.00",
+      "comment": "",
+      "created_at": "2026-10-30T12:00:00"
+    }
+  },
+  {
+    "model": "app.booking",
+    "pk": 10,
+    "fields": {
+      "client": 10,
+      "slot": 22,
+      "status": "completed",
+      "total_price": "4400.00",
+      "comment": "",
+      "created_at": "2026-10-29T12:00:00"
+    }
+  },
+  {
+    "model": "app.booking",
+    "pk": 11,
+    "fields": {
+      "client": 11,
+      "slot": 110,
+      "status": "completed",
+      "total_price": "3000.00",
+      "comment": "",
+      "created_at": "2026-10-19T12:00:00"
+    }
+  },
+  {
+    "model": "app.booking",
+    "pk": 12,
+    "fields": {
+      "client": 12,
+      "slot": 16,
+      "status": "completed",
+      "total_price": "4400.00",
+      "comment": "",
+      "created_at": "2026-10-10T12:00:00"
+    }
+  },
+  {
+    "model": "app.booking",
+    "pk": 13,
+    "fields": {
+      "client": 13,
+      "slot": 33,
+      "status": "completed",
+      "total_price": "3800.00",
+      "comment": "",
+      "created_at": "2026-10-25T12:00:00"
+    }
+  },
+  {
+    "model": "app.booking",
+    "pk": 14,
+    "fields": {
+      "client": 14,
+      "slot": 113,
+      "status": "completed",
+      "total_price": "3000.00",
+      "comment": "",
+      "created_at": "2026-10-27T12:00:00"
+    }
+  },
+  {
+    "model": "app.booking",
+    "pk": 15,
+    "fields": {
+      "client": 15,
+      "slot": 17,
+      "status": "completed",
+      "total_price": "4400.00",
+      "comment": "",
+      "created_at": "2026-10-17T12:00:00"
+    }
+  },
+  {
+    "model": "app.booking",
+    "pk": 16,
+    "fields": {
+      "client": 1,
+      "slot": 26,
+      "status": "completed",
+      "total_price": "4400.00",
+      "comment": "",
+      "created_at": "2026-11-06T12:00:00"
+    }
+  },
+  {
+    "model": "app.booking",
+    "pk": 17,
+    "fields": {
+      "client": 2,
+      "slot": 8,
+      "status": "completed",
+      "total_price": "5600.00",
+      "comment": "",
+      "created_at": "2026-10-23T12:00:00"
+    }
+  },
+  {
+    "model": "app.booking",
+    "pk": 18,
+    "fields": {
+      "client": 3,
+      "slot": 85,
+      "status": "completed",
+      "total_price": "4800.00",
+      "comment": "",
+      "created_at": "2026-11-08T12:00:00"
+    }
+  },
+  {
+    "model": "app.booking",
+    "pk": 19,
+    "fields": {
+      "client": 4,
+      "slot": 5,
+      "status": "completed",
+      "total_price": "5600.00",
+      "comment": "",
+      "created_at": "2026-10-15T12:00:00"
+    }
+  },
+  {
+    "model": "app.booking",
+    "pk": 20,
+    "fields": {
+      "client": 5,
+      "slot": 116,
+      "status": "completed",
+      "total_price": "3000.00",
+      "comment": "",
+      "created_at": "2026-11-03T12:00:00"
+    }
+  },
+  {
+    "model": "app.booking",
+    "pk": 21,
+    "fields": {
+      "client": 6,
+      "slot": 19,
+      "status": "completed",
+      "total_price": "4400.00",
+      "comment": "",
+      "created_at": "2026-10-20T12:00:00"
+    }
+  },
+  {
+    "model": "app.booking",
+    "pk": 22,
+    "fields": {
+      "client": 7,
+      "slot": 81,
+      "status": "completed",
+      "total_price": "4800.00",
+      "comment": "",
+      "created_at": "2026-10-22T12:00:00"
+    }
+  },
+  {
+    "model": "app.booking",
+    "pk": 23,
+    "fields": {
+      "client": 8,
+      "slot": 13,
+      "status": "planned",
+      "total_price": "5600.00",
+      "comment": "",
+      "created_at": "2026-11-08T12:00:00"
+    }
+  },
+  {
+    "model": "app.booking",
+    "pk": 24,
+    "fields": {
+      "client": 9,
+      "slot": 14,
+      "status": "planned",
+      "total_price": "5600.00",
+      "comment": "",
+      "created_at": "2026-11-12T12:00:00"
+    }
+  },
+  {
+    "model": "app.booking",
+    "pk": 25,
+    "fields": {
+      "client": 10,
+      "slot": 86,
+      "status": "planned",
+      "total_price": "4800.00",
+      "comment": "",
+      "created_at": "2026-11-10T12:00:00"
+    }
+  },
+  {
+    "model": "app.booking",
+    "pk": 26,
+    "fields": {
+      "client": 11,
+      "slot": 87,
+      "status": "planned",
+      "total_price": "4800.00",
+      "comment": "",
+      "created_at": "2026-11-12T12:00:00"
+    }
+  },
+  {
+    "model": "app.booking",
+    "pk": 27,
+    "fields": {
+      "client": 12,
+      "slot": 102,
+      "status": "planned",
+      "total_price": "8000.00",
+      "comment": "",
+      "created_at": "2026-11-09T12:00:00"
+    }
+  },
+  {
+    "model": "app.booking",
+    "pk": 28,
+    "fields": {
+      "client": 13,
+      "slot": 103,
+      "status": "planned",
+      "total_price": "8000.00",
+      "comment": "",
+      "created_at": "2026-11-15T12:00:00"
+    }
+  },
+  {
+    "model": "app.booking",
+    "pk": 29,
+    "fields": {
+      "client": 14,
+      "slot": 27,
+      "status": "planned",
+      "total_price": "4400.00",
+      "comment": "",
+      "created_at": "2026-11-12T12:00:00"
+    }
+  },
+  {
+    "model": "app.booking",
+    "pk": 30,
+    "fields": {
+      "client": 15,
+      "slot": 69,
+      "status": "planned",
+      "total_price": "3400.00",
+      "comment": "",
+      "created_at": "2026-11-11T12:00:00"
+    }
+  },
+  {
+    "model": "app.booking",
+    "pk": 31,
+    "fields": {
+      "client": 1,
+      "slot": 115,
+      "status": "cancelled",
+      "total_price": "3000.00",
+      "comment": "Клиент отменил бронь",
+      "created_at": "2026-10-30T12:00:00"
+    }
+  },
+  {
+    "model": "app.booking",
+    "pk": 32,
+    "fields": {
+      "client": 2,
+      "slot": 80,
+      "status": "cancelled",
+      "total_price": "4800.00",
+      "comment": "Клиент отменил бронь",
+      "created_at": "2026-10-19T12:00:00"
+    }
+  },
+  {
+    "model": "app.booking",
+    "pk": 33,
+    "fields": {
+      "client": 3,
+      "slot": 2,
+      "status": "cancelled",
+      "total_price": "5600.00",
+      "comment": "Клиент отменил бронь",
+      "created_at": "2026-10-14T12:00:00"
+    }
+  },
+  {
+    "model": "app.booking",
+    "pk": 34,
+    "fields": {
+      "client": 4,
+      "slot": 21,
+      "status": "cancelled",
+      "total_price": "4400.00",
+      "comment": "Клиент отменил бронь",
+      "created_at": "2026-10-25T12:00:00"
+    }
+  },
+  {
+    "model": "app.booking",
+    "pk": 35,
+    "fields": {
+      "client": 5,
+      "slot": 95,
+      "status": "cancelled",
+      "total_price": "8000.00",
+      "comment": "Клиент отменил бронь",
+      "created_at": "2026-10-25T12:00:00"
+    }
+  },
+  {
+    "model": "app.booking",
+    "pk": 36,
+    "fields": {
+      "client": 6,
+      "slot": 97,
+      "status": "cancelled",
+      "total_price": "8000.00",
+      "comment": "Клиент отменил бронь",
+      "created_at": "2026-11-04T12:00:00"
+    }
+  },
+  {
+    "model": "app.payment",
+    "pk": 1,
+    "fields": {
+      "booking": 1,
+      "amount": "3800.00",
+      "method": "transfer",
+      "paid_at": "2026-10-26T13:30:00"
+    }
+  },
+  {
+    "model": "app.payment",
+    "pk": 2,
+    "fields": {
+      "booking": 2,
+      "amount": "3000.00",
+      "method": "cash",
+      "paid_at": "2026-10-29T13:30:00"
+    }
+  },
+  {
+    "model": "app.payment",
+    "pk": 3,
+    "fields": {
+      "booking": 3,
+      "amount": "4400.00",
+      "method": "card",
+      "paid_at": "2026-10-18T13:30:00"
+    }
+  },
+  {
+    "model": "app.payment",
+    "pk": 4,
+    "fields": {
+      "booking": 4,
+      "amount": "4800.00",
+      "method": "transfer",
+      "paid_at": "2026-10-08T13:30:00"
+    }
+  },
+  {
+    "model": "app.payment",
+    "pk": 5,
+    "fields": {
+      "booking": 5,
+      "amount": "5600.00",
+      "method": "cash",
+      "paid_at": "2026-10-18T13:30:00"
+    }
+  },
+  {
+    "model": "app.payment",
+    "pk": 6,
+    "fields": {
+      "booking": 6,
+      "amount": "4400.00",
+      "method": "card",
+      "paid_at": "2026-10-28T13:30:00"
+    }
+  },
+  {
+    "model": "app.payment",
+    "pk": 7,
+    "fields": {
+      "booking": 7,
+      "amount": "4800.00",
+      "method": "transfer",
+      "paid_at": "2026-10-11T13:30:00"
+    }
+  },
+  {
+    "model": "app.payment",
+    "pk": 8,
+    "fields": {
+      "booking": 8,
+      "amount": "3800.00",
+      "method": "cash",
+      "paid_at": "2026-10-25T13:30:00"
+    }
+  },
+  {
+    "model": "app.payment",
+    "pk": 9,
+    "fields": {
+      "booking": 9,
+      "amount": "3800.00",
+      "method": "card",
+      "paid_at": "2026-10-30T13:30:00"
+    }
+  },
+  {
+    "model": "app.payment",
+    "pk": 10,
+    "fields": {
+      "booking": 10,
+      "amount": "4400.00",
+      "method": "transfer",
+      "paid_at": "2026-10-29T13:30:00"
+    }
+  },
+  {
+    "model": "app.payment",
+    "pk": 11,
+    "fields": {
+      "booking": 11,
+      "amount": "3000.00",
+      "method": "cash",
+      "paid_at": "2026-10-19T13:30:00"
+    }
+  },
+  {
+    "model": "app.payment",
+    "pk": 12,
+    "fields": {
+      "booking": 12,
+      "amount": "4400.00",
+      "method": "card",
+      "paid_at": "2026-10-10T13:30:00"
+    }
+  },
+  {
+    "model": "app.payment",
+    "pk": 13,
+    "fields": {
+      "booking": 13,
+      "amount": "3800.00",
+      "method": "transfer",
+      "paid_at": "2026-10-25T13:30:00"
+    }
+  },
+  {
+    "model": "app.payment",
+    "pk": 14,
+    "fields": {
+      "booking": 14,
+      "amount": "3000.00",
+      "method": "cash",
+      "paid_at": "2026-10-27T13:30:00"
+    }
+  },
+  {
+    "model": "app.payment",
+    "pk": 15,
+    "fields": {
+      "booking": 15,
+      "amount": "4400.00",
+      "method": "card",
+      "paid_at": "2026-10-17T13:30:00"
+    }
+  },
+  {
+    "model": "app.payment",
+    "pk": 16,
+    "fields": {
+      "booking": 16,
+      "amount": "4400.00",
+      "method": "transfer",
+      "paid_at": "2026-11-06T13:30:00"
+    }
+  },
+  {
+    "model": "app.payment",
+    "pk": 17,
+    "fields": {
+      "booking": 17,
+      "amount": "5600.00",
+      "method": "cash",
+      "paid_at": "2026-10-23T13:30:00"
+    }
+  },
+  {
+    "model": "app.payment",
+    "pk": 18,
+    "fields": {
+      "booking": 18,
+      "amount": "4800.00",
+      "method": "card",
+      "paid_at": "2026-11-08T13:30:00"
+    }
+  },
+  {
+    "model": "app.payment",
+    "pk": 19,
+    "fields": {
+      "booking": 19,
+      "amount": "5600.00",
+      "method": "transfer",
+      "paid_at": "2026-10-15T13:30:00"
+    }
+  },
+  {
+    "model": "app.payment",
+    "pk": 20,
+    "fields": {
+      "booking": 20,
+      "amount": "3000.00",
+      "method": "cash",
+      "paid_at": "2026-11-03T13:30:00"
+    }
+  },
+  {
+    "model": "app.payment",
+    "pk": 21,
+    "fields": {
+      "booking": 21,
+      "amount": "4400.00",
+      "method": "card",
+      "paid_at": "2026-10-20T13:30:00"
+    }
+  },
+  {
+    "model": "app.payment",
+    "pk": 22,
+    "fields": {
+      "booking": 22,
+      "amount": "4800.00",
+      "method": "transfer",
+      "paid_at": "2026-10-22T13:30:00"
+    }
+  },
+  {
+    "model": "app.payment",
+    "pk": 23,
+    "fields": {
+      "booking": 23,
+      "amount": "5600.00",
+      "method": "cash",
+      "paid_at": "2026-11-08T13:30:00"
+    }
+  },
+  {
+    "model": "app.payment",
+    "pk": 24,
+    "fields": {
+      "booking": 24,
+      "amount": "5600.00",
+      "method": "card",
+      "paid_at": "2026-11-12T13:30:00"
+    }
+  },
+  {
+    "model": "app.payment",
+    "pk": 25,
+    "fields": {
+      "booking": 25,
+      "amount": "4800.00",
+      "method": "transfer",
+      "paid_at": "2026-11-10T13:30:00"
+    }
+  },
+  {
+    "model": "app.payment",
+    "pk": 26,
+    "fields": {
+      "booking": 26,
+      "amount": "4800.00",
+      "method": "cash",
+      "paid_at": "2026-11-12T13:30:00"
+    }
+  },
+  {
+    "model": "app.payment",
+    "pk": 27,
+    "fields": {
+      "booking": 27,
+      "amount": "8000.00",
+      "method": "card",
+      "paid_at": "2026-11-09T13:30:00"
+    }
+  },
+  {
+    "model": "app.payment",
+    "pk": 28,
+    "fields": {
+      "booking": 28,
+      "amount": "8000.00",
+      "method": "transfer",
+      "paid_at": "2026-11-15T13:30:00"
+    }
+  },
+  {
+    "model": "app.payment",
+    "pk": 29,
+    "fields": {
+      "booking": 29,
+      "amount": "4400.00",
+      "method": "cash",
+      "paid_at": "2026-11-12T13:30:00"
+    }
+  },
+  {
+    "model": "app.payment",
+    "pk": 30,
+    "fields": {
+      "booking": 30,
+      "amount": "3400.00",
+      "method": "card",
+      "paid_at": "2026-11-11T13:30:00"
+    }
+  },
+  {
+    "model": "app.review",
+    "pk": 1,
+    "fields": {
+      "booking": 1,
+      "rating": 4,
+      "text": "Отличный свет и аккуратный реквизит.",
+      "created_at": "2026-11-13T18:00:00"
+    }
+  },
+  {
+    "model": "app.review",
+    "pk": 2,
+    "fields": {
+      "booking": 2,
+      "rating": 5,
+      "text": "Зал чистый, администратор помог с фоном.",
+      "created_at": "2026-11-12T18:00:00"
+    }
+  },
+  {
+    "model": "app.review",
+    "pk": 3,
+    "fields": {
+      "booking": 3,
+      "rating": 3,
+      "text": "Всё понравилось, вернёмся ещё.",
+      "created_at": "2026-11-11T18:00:00"
+    }
+  },
+  {
+    "model": "app.review",
+    "pk": 4,
+    "fields": {
+      "booking": 4,
+      "rating": 4,
+      "text": "Хороший зал, но мало розеток.",
+      "created_at": "2026-11-10T18:00:00"
+    }
+  },
+  {
+    "model": "app.review",
+    "pk": 5,
+    "fields": {
+      "booking": 5,
+      "rating": 5,
+      "text": "Свет мягкий, фон в идеале.",
+      "created_at": "2026-11-09T18:00:00"
+    }
+  },
+  {
+    "model": "app.review",
+    "pk": 6,
+    "fields": {
+      "booking": 6,
+      "rating": 3,
+      "text": "Удобное расположение, парковка рядом.",
+      "created_at": "2026-11-08T18:00:00"
+    }
+  },
+  {
+    "model": "app.review",
+    "pk": 7,
+    "fields": {
+      "booking": 7,
+      "rating": 4,
+      "text": "Ребёнок был в восторге от реквизита.",
+      "created_at": "2026-11-07T18:00:00"
+    }
+  },
+  {
+    "model": "app.review",
+    "pk": 8,
+    "fields": {
+      "booking": 8,
+      "rating": 5,
+      "text": "Качество съёмки выросло, свет отличный.",
+      "created_at": "2026-11-06T18:00:00"
+    }
+  },
+  {
+    "model": "app.review",
+    "pk": 9,
+    "fields": {
+      "booking": 9,
+      "rating": 3,
+      "text": "Немного душно, но в целом хорошо.",
+      "created_at": "2026-11-05T18:00:00"
+    }
+  },
+  {
+    "model": "app.review",
+    "pk": 10,
+    "fields": {
+      "booking": 10,
+      "rating": 4,
+      "text": "Идеальный циклорам, буду бронировать снова.",
+      "created_at": "2026-11-04T18:00:00"
+    }
+  },
+  {
+    "model": "app.review",
+    "pk": 11,
+    "fields": {
+      "booking": 11,
+      "rating": 5,
+      "text": "Администратор приветливый, зал светлый.",
+      "created_at": "2026-11-03T18:00:00"
+    }
+  },
+  {
+    "model": "app.review",
+    "pk": 12,
+    "fields": {
+      "booking": 12,
+      "rating": 3,
+      "text": "Все приборы работали, фон свежий.",
+      "created_at": "2026-11-02T18:00:00"
+    }
+  }
+]
