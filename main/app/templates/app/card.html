@@ -14,7 +14,7 @@
         
         <div class="hall-card__footer">
             <span class="hall-card__price">{{ hall.hourly_rate|floatformat:0 }} ₽ <span class="hall-card__price-label">/ час</span></span>
-            <a href="{% url 'app:hall_detail' hall.pk %}" class="btn btn--primary hall-card__btn">Забронировать</a>
+            <a href="{% url 'app:hall' hall.pk %}" class="btn btn--primary hall-card__btn">Забронировать</a>
         </div>
     </div>
 </article>

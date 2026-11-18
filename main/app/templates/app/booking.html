@@ -4,7 +4,7 @@
 {% block content %}
 <div class="container page-wrapper">
     <p class="breadcrumbs">
-        <a href="{% url 'app:catalog' %}">Каталог</a> / <a href="{% url 'app:hall_detail' hall.pk %}">{{ hall.name }}</a> / Бронирование
+        <a href="{% url 'app:catalog' %}">Каталог</a> / <a href="{% url 'app:hall' hall.pk %}">{{ hall.name }}</a> / Бронирование
     </p>
     
     <h1 class="section-title">Бронирование зала</h1>
@@ -14,6 +14,12 @@
             <form method="post">
                 {% csrf_token %}
                 
+                {% if form.non_field_errors %}
+                    <div class="form-error" style="margin-bottom: 16px; padding: 12px; background: #ffebee; border-radius: 8px;">
+                        {{ form.non_field_errors.0 }}
+                    </div>
+                {% endif %}
+
                 {% for field in form %}
                 <div class="form-group">
                     <label class="form-label">{{ field.label }}</label>

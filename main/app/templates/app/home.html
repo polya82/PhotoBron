@@ -29,7 +29,7 @@
                         <p class="hall-card__desc">Вместимость: до {{ hall.capacity }} чел.</p>
                         <div class="hall-card__footer">
                             <span class="hall-card__price">{{ hall.hourly_rate|floatformat:0 }} ₽ / час</span>
-                            <a href="{% url 'app:hall_detail' hall.pk %}" class="btn btn--outline">Подробнее</a>
+                            <a href="{% url 'app:hall' hall.pk %}" class="btn btn--outline">Подробнее</a>
                         </div>
                     </div>
                 </article>

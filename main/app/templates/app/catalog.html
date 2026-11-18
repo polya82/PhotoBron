@@ -12,7 +12,7 @@
 
     <div class="halls-grid">
         {% for hall in page_obj %}
-            {% include 'app/hall_card.html' with hall=hall %}
+            {% include 'app/card.html' with hall=hall %}
         {% empty %}
             <p>Залы пока не добавлены.</p>
         {% endfor %}
