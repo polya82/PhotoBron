@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block title %}Бронирование — ФотоБронь{% endblock %}
+
+{% block content %}
+<div class="container page-wrapper">
+    <p class="breadcrumbs">
+        <a href="{% url 'app:catalog' %}">Каталог</a> / <a href="{% url 'app:hall_detail' hall.pk %}">{{ hall.name }}</a> / Бронирование
+    </p>
+    
+    <h1 class="section-title">Бронирование зала</h1>
+
+    <div class="detail-layout align-start">
+        <div class="form-card">
+            <form method="post">
+                {% csrf_token %}
+                
+                {% for field in form %}
+                <div class="form-group">
+                    <label class="form-label">{{ field.label }}</label>
+                    {{ field }}
+                    {% if field.errors %}
+                        <div class="form-error">{{ field.errors.0 }}</div>
+                    {% endif %}
+                </div>
+                {% endfor %}
+                
+                <button type="submit" class="btn btn--primary btn--large w-100">Забронировать</button>
+            </form>
+        </div>
+
+        <div class="summary-card">
+            <h3 class="summary-title">Итого</h3>
+            <div class="summary-row">
+                <span>{{ hall.name }}</span>
+                <span>{{ hall.hourly_rate|floatformat:0 }} ₽/ч</span>
+            </div>
+            <hr class="summary-divider">
+            <div class="summary-total">
+                <span>К оплате</span>
+                <span class="summary-price">{{ hall.hourly_rate|floatformat:0 }} ₽</span>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

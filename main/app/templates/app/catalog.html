@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block title %}Каталог залов — ФотоБронь{% endblock %}
+
+{% block content %}
+<div class="container page-wrapper">
+    <h1 class="section-title">Каталог залов</h1>
+    
+    <form action="{% url 'app:search' %}" method="get" class="search-form">
+        <input type="text" name="q" placeholder="Поиск по названию..." class="search-form__input">
+        <button type="submit" class="btn btn--primary search-form__btn">Найти</button>
+    </form>
+
+    <div class="halls-grid">
+        {% for hall in page_obj %}
+            {% include 'app/hall_card.html' with hall=hall %}
+        {% empty %}
+            <p>Залы пока не добавлены.</p>
+        {% endfor %}
+    </div>
+
+    <div class="pagination">
+        {% if page_obj.has_previous %}
+            <a href="?page={{ page_obj.previous_page_number }}" class="pagination__btn">Назад</a>
+        {% endif %}
+        <span class="pagination__info">Страница {{ page_obj.number }} из {{ page_obj.paginator.num_pages }}</span>
+        {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}" class="pagination__btn">Вперед</a>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

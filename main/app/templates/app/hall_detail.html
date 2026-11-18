@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block title %}{{ hall.name }} — ФотоБронь{% endblock %}
+
+{% block content %}
+<div class="container page-wrapper">
+    <p class="breadcrumbs">
+        <a href="{% url 'app:home' %}">Главная</a> / <a href="{% url 'app:catalog' %}">Каталог</a> / {{ hall.name }}
+    </p>
+
+    <h1 class="section-title">{{ hall.studio.name }} — {{ hall.name }}</h1>
+
+    <div class="detail-layout">
+        <div class="detail-image">
+            <img src="https://via.placeholder.com/800x500?text=Hall+Photo" 
+                 alt="Фото зала {{ hall.name }}" 
+                 width="800" height="500"
+                 loading="lazy"
+                 class="detail-img">
+        </div>
+
+        <div class="detail-info">
+            <div class="detail-price-box">
+                <span class="hall-card__price">{{ hall.hourly_rate|floatformat:0 }} ₽</span> <span class="hall-card__price-label">/ час</span>
+            </div>
+            
+            <p><strong>Вместимость:</strong> до {{ hall.capacity }} чел.</p>
+            <p class="detail-desc">{{ hall.description|default:"Описание отсутствует." }}</p>
+
+            <h3 class="detail-subtitle">Оборудование в зале:</h3>
+            <ul class="detail-list">
+                {% for item in equipment %}
+                    <li>{{ item.equipment.name }} — {{ item.quantity }} шт.</li>
+                {% empty %}
+                    <li>Собственное оборудование не предоставляется.</li>
+                {% endfor %}
+            </ul>
+
+            <a href="{% url 'app:booking' hall.pk %}" class="btn btn--primary btn--large">Забронировать зал</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
