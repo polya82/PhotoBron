@@ -1,30 +1,48 @@
 {% extends 'base.html' %}
-{% block title %}Каталог залов — ФотоБронь{% endblock %}
+{% block title %}{% if query %}Поиск: {{ query }}{% else %}Каталог залов{% endif %} — ФотоБронь{% endblock %}
 
 {% block content %}
 <div class="container page-wrapper">
-    <h1 class="section-title">Каталог залов</h1>
+    <h1 class="section-title">{% if query %}Результаты поиска{% else %}Каталог залов{% endif %}</h1>
     
-    <form action="{% url 'app:search' %}" method="get" class="search-form">
-        <input type="text" name="q" placeholder="Поиск по названию..." class="search-form__input">
+    <form action="{% url 'app:catalog' %}" method="get" class="search-form">
+        <input type="text" name="q" value="{{ query|default:'' }}" placeholder="Поиск по названию..." class="search-form__input">
         <button type="submit" class="btn btn--primary search-form__btn">Найти</button>
     </form>
 
+    {% if query %}
+        <p style="margin-bottom: 24px; color: var(--text-sec);">По запросу «<strong>{{ query }}</strong>» найдено залов: {{ page_obj.paginator.count }}</p>
+    {% endif %}
+
     <div class="halls-grid">
         {% for hall in page_obj %}
-            {% include 'app/card.html' with hall=hall %}
+            <article class="hall-card">
+                <div class="hall-card__image-wrapper">
+                    <img src="https://via.placeholder.com/400x250?text=Photo+Studio" alt="Фото зала {{ hall.name }}" width="400" height="250" loading="lazy" class="hall-card__img">
+                </div>
+                <div class="hall-card__content">
+                    <h3 class="hall-card__title">{{ hall.studio.name }} — {{ hall.name }}</h3>
+                    <p class="hall-card__desc">Вместимость: до {{ hall.capacity }} чел.</p>
+                    <p class="hall-card__desc">{{ hall.description|default:"Описание скоро появится"|truncatechars:50 }}</p>
+                    
+                    <div class="hall-card__footer">
+                        <span class="hall-card__price">{{ hall.hourly_rate|floatformat:0 }} ₽ <span class="hall-card__price-label">/ час</span></span>
+                        <a href="{% url 'app:hall' hall.pk %}" class="btn btn--primary hall-card__btn">Забронировать</a>
+                    </div>
+                </div>
+            </article>
         {% empty %}
-            <p>Залы пока не добавлены.</p>
+            <p>{% if query %}Ничего не найдено. Попробуйте изменить запрос.{% else %}Залы пока не добавлены.{% endif %}</p>
         {% endfor %}
     </div>
 
     <div class="pagination">
         {% if page_obj.has_previous %}
-            <a href="?page={{ page_obj.previous_page_number }}" class="pagination__btn">Назад</a>
+            <a href="?page={{ page_obj.previous_page_number }}{% if query %}&q={{ query }}{% endif %}" class="pagination__btn">Назад</a>
         {% endif %}
         <span class="pagination__info">Страница {{ page_obj.number }} из {{ page_obj.paginator.num_pages }}</span>
         {% if page_obj.has_next %}
-            <a href="?page={{ page_obj.next_page_number }}" class="pagination__btn">Вперед</a>
+            <a href="?page={{ page_obj.next_page_number }}{% if query %}&q={{ query }}{% endif %}" class="pagination__btn">Вперед</a>
         {% endif %}
     </div>
 </div>
