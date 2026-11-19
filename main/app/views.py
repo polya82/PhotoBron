@@ -83,20 +83,35 @@ def booking(request, pk):
     return render(request, 'app/booking.html', {'hall': hall_obj, 'form': form})
 
 def login_view(request):
+    if request.method == 'POST':
+        phone = request.POST.get('phone', '').strip()
+        if Client.objects.filter(phone=phone).exists():
+            request.session['client_phone'] = phone
+            messages.success(request, 'Вы успешно вошли в личный кабинет!')
+            return redirect('app:account')
+        else:
+            messages.error(request, 'Клиент с таким номером телефона не найден. Пожалуйста, сначала оформите бронирование.')
+    
     return render(request, 'app/login.html')
+
+def logout_view(request):
+    if 'client_phone' in request.session:
+        del request.session['client_phone']
+    messages.success(request, 'Вы вышли из личного кабинета.')
+    return redirect('app:home')
 
 def account(request):
     phone = request.session.get('client_phone')
-    if phone:
-        bookings = Booking.objects.filter(client__phone=phone).select_related('slot__hall', 'client').order_by('-created_at')
-    else:
-        bookings = Booking.objects.all().select_related('slot__hall', 'client').order_by('-created_at')
+    if not phone:
+        messages.warning(request, 'Пожалуйста, войдите в кабинет, чтобы увидеть бронирования.')
+        return redirect('app:login')
+        
+    bookings = Booking.objects.filter(client__phone=phone).select_related('slot__hall', 'client').order_by('-created_at')
     return render(request, 'app/account.html', {'bookings': bookings})
 
 def cancel_booking(request, pk):
     booking_obj = get_object_or_404(Booking, pk=pk)
     if request.method == 'POST':
-        # Освобождаем слот и удаляем бронь, чтобы можно было забронировать снова
         booking_obj.slot.status = 'open'
         booking_obj.slot.save()
         booking_obj.delete()

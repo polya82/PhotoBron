@@ -1,4 +1,6 @@
 {% extends 'base.html' %}
+{% load static %}
+
 {% block title %}{{ hall.name }} — ФотоБронь{% endblock %}
 
 {% block content %}
@@ -11,11 +13,7 @@
 
     <div class="detail-layout">
         <div class="detail-image">
-            <img src="https://via.placeholder.com/800x500?text=Hall+Photo" 
-                 alt="Фото зала {{ hall.name }}" 
-                 width="800" height="500"
-                 loading="lazy"
-                 class="detail-img">
+            <img src="{% static 'img/hall' %}{{ hall.id }}.jpg" alt="Фото зала {{ hall.name }}" width="800" height="500" loading="lazy" class="detail-img">
         </div>
 
         <div class="detail-info">

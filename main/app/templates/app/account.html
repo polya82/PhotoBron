@@ -9,7 +9,7 @@
         <aside class="sidebar-menu">
             <ul>
                 <li class="active">Мои бронирования</li>
-                <li><a href="#">Выход</a></li>
+                <li><a href="{% url 'app:logout' %}">Выход</a></li>
             </ul>
         </aside>
         
@@ -51,7 +51,7 @@
                                 <td>{{ booking.total_price|floatformat:0 }} ₽</td>
                                 <td>
                                     {% if booking.status == 'planned' %}
-                                        <form method="POST" action="{% url 'app:cancel_booking' booking.pk %}">
+                                        <form method="POST" action="{% url 'app:cancel_booking' booking.pk %}" style="margin: 0;">
                                             {% csrf_token %}
                                             <button type="submit" class="btn btn--outline btn--small" onclick="return confirm('Вы уверены, что хотите отменить бронирование?')">Отменить</button>
                                         </form>

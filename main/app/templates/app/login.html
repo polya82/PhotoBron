@@ -4,6 +4,29 @@
 {% block content %}
 <div class="container page-wrapper">
     <h1 class="section-title">Вход в личный кабинет</h1>
-    <p>Форма авторизации будет добавлена на 9-м занятии.</p>
+    
+    <div class="form-card" style="max-width: 500px; margin: 0 auto;">
+        
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert-message" style="background: #FFEBEE; color: #C62828; border-left-color: #C62828;">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endif %}
+
+        <p style="margin-bottom: 20px; color: var(--text-sec);">
+            Введите номер телефона, который вы указывали при бронировании.
+        </p>
+
+        <form method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                <label class="form-label">Номер телефона</label>
+                <input type="text" name="phone" class="form-control" placeholder="+7 900 000-00-00" required>
+            </div>
+            <button type="submit" class="btn btn--primary btn--large w-100">Войти</button>
+        </form>
+    </div>
 </div>
 {% endblock %}
