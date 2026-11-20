@@ -118,6 +118,9 @@ def account(request):
 
 def cancel_booking(request, pk):
     booking_obj = get_object_or_404(Booking, pk=pk)
+    if request.session.get('client_phone') != booking_obj.client.phone:
+        messages.error(request, 'Вы не можете отменить чужое бронирование.')
+        return redirect('app:account')
     if request.method == 'POST':
         booking_obj.slot.status = 'open'
         booking_obj.slot.save()
