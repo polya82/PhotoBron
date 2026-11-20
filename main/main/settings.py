@@ -38,9 +38,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'app',
+    "debug_toolbar",
 ]
+INTERNAL_IPS = ["127.0.0.1"]
 
 MIDDLEWARE = [
+    "debug_toolbar.middleware.DebugToolbarMiddleware",
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -128,5 +131,26 @@ MEDIA_ROOT = BASE_DIR / 'media'
 MAILERS = {
     'default': {
         'BACKEND': 'django.core.mail.backends.console.EmailBackend',
+    },
+}
+LOGGING = {
+    "version": 1,
+    "disable_existing_loggers": False,
+    "formatters": {
+        "verbose": {
+            "format": "{asctime} {levelname} {module} {message}",
+            "style": "{",
+        },
+    },
+    "handlers": {
+        "file": {
+            "class": "logging.FileHandler",
+            "filename": BASE_DIR / "logs" / "app.log",
+            "formatter": "verbose",
+            "level": "INFO",
+        },
+    },
+    "loggers": {
+        "photobron": {"handlers": ["file"], "level": "INFO"},
     },
 }

@@ -14,26 +14,26 @@ def home(request):
 def catalog(request):
     query = request.GET.get('q', '')
     halls_list = Hall.objects.filter(studio__is_active=True)
-    
+
     if query:
         halls_list = halls_list.filter(
             Q(name__icontains=query) | Q(studio__name__icontains=query) | Q(description__icontains=query)
         )
-        
+
     paginator = Paginator(halls_list, 20)
     page_obj = paginator.get_page(request.GET.get('page'))
-    
+
     return render(request, 'app/catalog.html', {'page_obj': page_obj, 'query': query})
 
 def api_search_halls(request):
     query = request.GET.get('q', '')
     halls = Hall.objects.filter(studio__is_active=True)
-    
+
     if query:
         halls = halls.filter(
             Q(name__icontains=query) | Q(studio__name__icontains=query)
         )
-    
+
     results = []
     for hall in halls[:5]:
         results.append({
@@ -43,7 +43,7 @@ def api_search_halls(request):
             'price': int(hall.hourly_rate),
             'url': f'/hall/{hall.pk}/'
         })
-    
+
     return JsonResponse({'results': results, 'count': halls.count()})
 
 def hall(request, pk):
@@ -59,16 +59,21 @@ def booking(request, pk):
             phone = form.cleaned_data['phone']
             name = form.cleaned_data['name']
             client, created = Client.objects.get_or_create(phone=phone, defaults={'full_name': name})
-            
+
             date = form.cleaned_data['date']
             start_time = form.cleaned_data['time']
+
+            if start_time.hour >= 23:
+                form.add_error("time", "Бронирование возможно не позднее 22:00")
+                return render(request, "app/booking.html", {"hall": hall_obj, "form": form})
+
             end_time = (datetime.combine(date, start_time) + timedelta(hours=1)).time()
-            
+
             slot, slot_created = Slot.objects.get_or_create(
                 hall=hall_obj, date=date, start_time=start_time,
                 defaults={'end_time': end_time, 'status': 'booked'}
             )
-            
+
             if not slot_created and hasattr(slot, 'booking'):
                 form.add_error(None, "Это время уже занято, выберите другое.")
             else:
@@ -78,9 +83,11 @@ def booking(request, pk):
                 request.session['client_phone'] = phone
                 messages.success(request, f'Заявка на зал «{hall_obj.name}» успешно отправлена!')
                 return redirect('app:account')
+
     else:
         form = BookingForm()
     return render(request, 'app/booking.html', {'hall': hall_obj, 'form': form})
+
 
 def login_view(request):
     if request.method == 'POST':
@@ -91,7 +98,7 @@ def login_view(request):
             return redirect('app:account')
         else:
             messages.error(request, 'Клиент с таким номером телефона не найден. Пожалуйста, сначала оформите бронирование.')
-    
+
     return render(request, 'app/login.html')
 
 def logout_view(request):
@@ -105,7 +112,7 @@ def account(request):
     if not phone:
         messages.warning(request, 'Пожалуйста, войдите в кабинет, чтобы увидеть бронирования.')
         return redirect('app:login')
-        
+
     bookings = Booking.objects.filter(client__phone=phone).select_related('slot__hall', 'client').order_by('-created_at')
     return render(request, 'app/account.html', {'bookings': bookings})
 
