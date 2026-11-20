@@ -21,7 +21,7 @@
         {% for hall in page_obj %}
             <article class="hall-card">
                 <div class="hall-card__image-wrapper">
-                    <img src="{% static 'img/hall1.jpg' %}" alt="Фото зала {{ hall.name }}" width="400" height="250" loading="lazy" class="hall-card__img">
+                    <img src="{% static 'img/hall' %}{{ hall.id }}.jpg" alt="Фото зала {{ hall.name }}" width="400" height="250" loading="lazy" class="hall-card__img">
                 </div>
                 <div class="hall-card__content">
                     <h3 class="hall-card__title">{{ hall.studio.name }} — {{ hall.name }}</h3>
