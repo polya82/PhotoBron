@@ -7,6 +7,14 @@ from django.http import JsonResponse
 from .models import Hall, Booking, Client, Slot
 from .forms import BookingForm
 
+def normalize_phone(raw):
+    digits = ''.join(ch for ch in raw if ch.isdigit())
+    if len(digits) == 11 and digits[0] == '8':
+        digits = '7' + digits[1:]
+    if len(digits) == 10:
+        digits = '7' + digits
+    return '+' + digits
+
 def home(request):
     popular_halls = Hall.objects.filter(studio__is_active=True)[:3]
     return render(request, 'app/home.html', {'halls': popular_halls})
@@ -56,7 +64,7 @@ def booking(request, pk):
     if request.method == 'POST':
         form = BookingForm(request.POST)
         if form.is_valid():
-            phone = form.cleaned_data['phone']
+            phone = normalize_phone(form.cleaned_data['phone'])
             name = form.cleaned_data['name']
             client, created = Client.objects.get_or_create(phone=phone, defaults={'full_name': name})
 
@@ -95,7 +103,7 @@ def booking(request, pk):
 
 def login_view(request):
     if request.method == 'POST':
-        phone = request.POST.get('phone', '').strip()
+        phone = normalize_phone(request.POST.get('phone', ''))
         if Client.objects.filter(phone=phone).exists():
             request.session['client_phone'] = phone
             messages.success(request, 'Вы успешно вошли в личный кабинет!')
