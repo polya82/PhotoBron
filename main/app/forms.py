@@ -12,6 +12,11 @@ class BookingForm(forms.Form):
         widget=forms.TimeInput(attrs={'type': 'time', 'class': 'form-control'}),
         error_messages={'required': 'Выберите время начала съёмки.'}
     )
+    time_end = forms.TimeField(
+        label="Время окончания",
+        widget=forms.TimeInput(attrs={'type': 'time', 'class': 'form-control'}),
+        error_messages={'required': 'Выберите время окончания съёмки.'}
+    )
     name = forms.CharField(
         label="Ваше имя",
         max_length=100,
