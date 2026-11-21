@@ -67,6 +67,10 @@ def booking(request, pk):
                 form.add_error("time", "Бронирование возможно не позднее 22:00")
                 return render(request, "app/booking.html", {"hall": hall_obj, "form": form})
 
+            if datetime.combine(date, start_time) < datetime.now():
+                form.add_error(None, "Нельзя забронировать зал на прошедшее время. Выберите другую дату или время.")
+                return render(request, "app/booking.html", {"hall": hall_obj, "form": form})
+
             end_time = (datetime.combine(date, start_time) + timedelta(hours=1)).time()
 
             slot, slot_created = Slot.objects.get_or_create(
