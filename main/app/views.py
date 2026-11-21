@@ -70,31 +70,30 @@ def booking(request, pk):
 
             date = form.cleaned_data['date']
             start_time = form.cleaned_data['time']
+            end_time = form.cleaned_data['time_end']
 
-            if start_time.hour >= 23:
-                form.add_error("time", "Бронирование возможно не позднее 22:00")
+            if end_time <= start_time:
+                form.add_error("time_end", "Время окончания должно быть позже времени начала.")
+                return render(request, "app/booking.html", {"hall": hall_obj, "form": form})
+
+            if end_time.hour >= 23:
+                form.add_error("time_end", "Бронирование возможно не позднее 22:00")
                 return render(request, "app/booking.html", {"hall": hall_obj, "form": form})
 
             if datetime.combine(date, start_time) < datetime.now():
                 form.add_error(None, "Нельзя забронировать зал на прошедшее время. Выберите другую дату или время.")
                 return render(request, "app/booking.html", {"hall": hall_obj, "form": form})
 
-            end_time = (datetime.combine(date, start_time) + timedelta(hours=1)).time()
+            hours = int((datetime.combine(date, end_time) - datetime.combine(date, start_time)).total_seconds() // 3600)
 
-            slot, slot_created = Slot.objects.get_or_create(
-                hall=hall_obj, date=date, start_time=start_time,
-                defaults={'end_time': end_time, 'status': 'booked'}
+            slot = Slot.objects.create(
+                hall=hall_obj, date=date,
+                start_time=start_time, end_time=end_time, status='booked'
             )
-
-            if not slot_created and hasattr(slot, 'booking'):
-                form.add_error(None, "Это время уже занято, выберите другое.")
-            else:
-                Booking.objects.create(client=client, slot=slot, total_price=hall_obj.hourly_rate, status='planned')
-                slot.status = 'booked'
-                slot.save()
-                request.session['client_phone'] = phone
-                messages.success(request, f'Заявка на зал «{hall_obj.name}» успешно отправлена!')
-                return redirect('app:account')
+            Booking.objects.create(client=client, slot=slot, total_price=hall_obj.hourly_rate * hours, status='planned')
+            request.session['client_phone'] = phone
+            messages.success(request, f'Заявка на зал «{hall_obj.name}» успешно отправлена!')
+            return redirect('app:account')
 
     else:
         form = BookingForm()
