@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}Доступ запрещён — ФотоБронь{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="card-section" style="text-align: center; padding: 60px 20px;">
+        <h1>403 — доступ запрещён</h1>
+        <p>У вас нет прав на это действие. Возможно, вы пытаетесь изменить чужую бронь.</p>
+        <a href="{% url 'app:home' %}" class="btn btn--primary">На главную</a>
+        <a href="{% url 'app:catalog' %}" class="btn btn--outline">В каталог залов</a>
+    </div>
+</div>
+{% endblock %}

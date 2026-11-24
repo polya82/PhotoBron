@@ -20,12 +20,15 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/6.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-^k^r36n4oazr)3e1146a6dn8*grzvs)9*(8dgp#cepe%=g(&2x'
+import os
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
+SECRET_KEY = os.environ.get(
+    'DJANGO_SECRET_KEY',
+    'django-insecure-smenite-eto-na-svoi-50-simvolov-sluchaynoy-stroki'
+)
 
-ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -38,12 +41,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'app',
-    "debug_toolbar",
+    'debug_toolbar',
 ]
-INTERNAL_IPS = ["127.0.0.1"]
+INTERNAL_IPS = ['127.0.0.1']
 
 MIDDLEWARE = [
-    "debug_toolbar.middleware.DebugToolbarMiddleware",
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -133,24 +136,33 @@ MAILERS = {
         'BACKEND': 'django.core.mail.backends.console.EmailBackend',
     },
 }
+
+
+
+
 LOGGING = {
-    "version": 1,
-    "disable_existing_loggers": False,
-    "formatters": {
-        "verbose": {
-            "format": "{asctime} {levelname} {module} {message}",
-            "style": "{",
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'verbose': {
+            'format': '{asctime} {levelname} {module} {message}',
+            'style': '{',
         },
     },
-    "handlers": {
-        "file": {
-            "class": "logging.FileHandler",
-            "filename": BASE_DIR / "logs" / "app.log",
-            "formatter": "verbose",
-            "level": "INFO",
+    'handlers': {
+        'file': {
+            'class': 'logging.FileHandler',
+            'filename': BASE_DIR / 'logs' / 'app.log',
+            'formatter': 'verbose',
+            'level': 'DEBUG',
+            'encoding': 'utf-8',
         },
     },
-    "loggers": {
-        "photobron": {"handlers": ["file"], "level": "INFO"},
+    'loggers': {
+        'app': {
+            'handlers': ['file'],
+            'level': 'DEBUG',
+            'propagate': False,
+        },
     },
 }

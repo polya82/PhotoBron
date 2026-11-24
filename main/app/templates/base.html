@@ -8,47 +8,60 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
-    <header class="header">
-        <div class="container header__container">
-            <a href="{% url 'app:home' %}" class="logo">ФотоБронь</a>
-            
-            <button class="burger" id="burger-menu" aria-label="Открыть меню">
-                <span></span><span></span><span></span>
-            </button>
 
-            <nav class="nav" id="nav-menu">
-                <ul class="nav__list">
-                    <li><a href="{% url 'app:catalog' %}" class="nav__link">Каталог</a></li>
-                    <a href="{% url 'app:about' %}" class="nav__link">О проекте</a>
-                    <li><a href="#" class="nav__link">Контакты</a></li>
-                </ul>
-            </nav>
+<header class="header">
+    <div class="container header__container">
+        <a href="{% url 'app:home' %}" class="logo">ФотоБронь</a>
 
-            <div class="header__actions">
-                <a href="{% url 'app:login' %}" class="btn btn--primary">Войти</a>
-            </div>
-        </div>
-    </header>
+        <button id="burger-menu" class="burger" aria-label="Меню">
+            <span></span><span></span><span></span>
+        </button>
 
-    <main class="main">
-        {% block content %}
-        {% endblock %}
-    </main>
-
-    <footer class="footer">
-        <div class="container footer__container">
-            <div class="footer__info">
-                <span class="logo logo--white">ФотоБронь</span>
-                <p> 2026 Каталог фотостудий</p>
-            </div>
-            <ul class="footer__links">
-                <li><a href="{% url 'app:catalog' %}">Каталог</a></li>
-                <li><a href="#">О проекте</a></li>
-                <li><a href="#">Контакты</a></li>
+        <nav id="nav-menu" class="nav">
+            <ul class="nav__list">
+                <li><a href="{% url 'app:home' %}" class="nav__link">Главная</a></li>
+                <li><a href="{% url 'app:catalog' %}" class="nav__link">Каталог</a></li>
+                <li><a href="{% url 'app:about' %}" class="nav__link">О проекте</a></li>
             </ul>
-        </div>
-    </footer>
+        </nav>
 
-    <script src="{% static 'js/main.js' %}"></script>
+        <div class="search-form">
+            <input type="text" id="search-input" class="search-form__input" placeholder="Поиск залов..." autocomplete="off">
+            <div id="search-results" class="search-results"></div>
+        </div>
+
+        {% if not request.session.client_phone %}
+            <a href="{% url 'app:login' %}" class="btn btn--primary">Войти</a>
+        {% else %}
+            <a href="{% url 'app:account' %}" class="btn btn--outline">Кабинет</a>
+        {% endif %}
+    </div>
+</header>
+
+{% if messages %}
+    {% for message in messages %}
+        <div class="container">
+            <div class="alert-message">{{ message }}</div>
+        </div>
+    {% endfor %}
+{% endif %}
+
+<main>
+    {% block content %} {% endblock %}
+</main>
+
+<footer class="footer">
+    <div class="container footer__container">
+        <p class="logo logo--white">ФотоБронь</p>
+        <p class="footer__copy">© 2026 ФотоБронь — каталог фотостудий</p>
+        <ul class="footer__links">
+            <li><a href="{% url 'app:home' %}">Главная</a></li>
+            <li><a href="{% url 'app:catalog' %}">Каталог</a></li>
+            <li><a href="{% url 'app:about' %}">О проекте</a></li>
+        </ul>
+    </div>
+</footer>
+
+<script src="{% static 'js/main.js' %}"></script>
 </body>
 </html>

@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}Страница не найдена — ФотоБронь{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="card-section" style="text-align: center; padding: 60px 20px;">
+        <h1>404 — страница не найдена</h1>
+        <p>Такой страницы на сайте нет. Возможно, зал удалён или ссылка устарела.</p>
+        <a href="{% url 'app:catalog' %}" class="btn btn--primary">Перейти в каталог залов</a>
+        <a href="{% url 'app:home' %}" class="btn btn--outline">На главную</a>
+    </div>
+</div>
+{% endblock %}

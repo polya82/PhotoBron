@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}ФотоБронь{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <header class="header">
+        <div class="container header__container">
+            <a href="{% url 'app:home' %}" class="logo">ФотоБронь</a>
+            
+            <button class="burger" id="burger-menu" aria-label="Открыть меню">
+                <span></span><span></span><span></span>
+            </button>
+
+            <nav class="nav" id="nav-menu">
+                <ul class="nav__list">
+                    <li><a href="{% url 'app:catalog' %}" class="nav__link">Каталог</a></li>
+                    <a href="{% url 'app:about' %}" class="nav__link">О проекте</a>
+                    <li><a href="#" class="nav__link">Контакты</a></li>
+                </ul>
+            </nav>
+
+            <div class="header__actions">
+                <a href="{% url 'app:login' %}" class="btn btn--primary">Войти</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <footer class="footer">
+        <div class="container footer__container">
+            <div class="footer__info">
+                <span class="logo logo--white">ФотоБронь</span>
+                <p> 2026 Каталог фотостудий</p>
+            </div>
+            <ul class="footer__links">
+                <li><a href="{% url 'app:catalog' %}">Каталог</a></li>
+                <li><a href="#">О проекте</a></li>
+                <li><a href="#">Контакты</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>

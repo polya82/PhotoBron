@@ -13,11 +13,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (searchInput && searchResults) {
         let timeout = null;
-        
+
         searchInput.addEventListener('input', function() {
             clearTimeout(timeout);
             const query = this.value.trim();
-            
+
             if (query.length < 2) {
                 searchResults.classList.remove('active');
                 searchResults.innerHTML = '';
@@ -38,7 +38,18 @@ document.addEventListener('DOMContentLoaded', () => {
                             data.results.forEach(hall => {
                                 const div = document.createElement('div');
                                 div.className = 'search-result-item';
-                                div.innerHTML = `<span><strong>${hall.studio}</strong> — ${hall.name}</span> <span>${hall.price} ₽/ч</span>`;
+
+                                const left = document.createElement('span');
+                                const strong = document.createElement('strong');
+                                strong.textContent = hall.studio;
+                                left.appendChild(strong);
+                                left.appendChild(document.createTextNode(' — ' + hall.name));
+
+                                const right = document.createElement('span');
+                                right.textContent = hall.price + ' ₽/ч';
+
+                                div.appendChild(left);
+                                div.appendChild(right);
                                 div.addEventListener('click', () => window.location.href = hall.url);
                                 searchResults.appendChild(div);
                             });
@@ -63,49 +74,56 @@ document.addEventListener('DOMContentLoaded', () => {
     if (bookingForm) {
         bookingForm.addEventListener('submit', function(e) {
             let hasErrors = false;
-            
 
             bookingForm.querySelectorAll('.js-error').forEach(el => el.remove());
-            
+
             const nameInput = this.querySelector('input[name="name"]');
             const phoneInput = this.querySelector('input[name="phone"]');
             const dateInput = this.querySelector('input[name="date"]');
             const timeInput = this.querySelector('input[name="time"]');
+            const timeEndInput = this.querySelector('input[name="time_end"]');
 
-            if (nameInput.value.trim().length < 2) {
+            const showError = (input, text) => {
+                const error = document.createElement('div');
+                error.className = 'form-error js-error';
+                input.parentNode.appendChild(error);
+                error.textContent = text;
+                input.style.borderColor = '#C62828';
+            };
+
+            if (nameInput && nameInput.value.trim().length < 2) {
                 showError(nameInput, 'Имя должно быть не менее 2 символов');
                 hasErrors = true;
             }
 
-            const phoneRegex = /^\+?[0-9\s\-\(\)]{10,18}$/;
-            if (!phoneRegex.test(phoneInput.value)) {
-                showError(phoneInput, 'Введите корректный номер телефона');
-                hasErrors = true;
+            if (phoneInput) {
+                const digits = phoneInput.value.replace(/\D/g, '');
+                if (digits.length < 9 || digits.length > 15) {
+                    showError(phoneInput, 'Введите корректный номер телефона');
+                    hasErrors = true;
+                }
             }
 
-            if (!dateInput.value) {
-                showError(dateInput, 'Выберите дату');
-                hasErrors = true;
+            if (dateInput && dateInput.value) {
+                const today = new Date();
+                today.setHours(0, 0, 0, 0);
+                const selected = new Date(dateInput.value + 'T00:00:00');
+                if (selected < today) {
+                    showError(dateInput, 'Нельзя забронировать зал на прошедшее время');
+                    hasErrors = true;
+                }
             }
-            if (!timeInput.value) {
-                showError(timeInput, 'Выберите время');
-                hasErrors = true;
+
+            if (timeInput && timeEndInput && timeInput.value && timeEndInput.value) {
+                if (timeEndInput.value <= timeInput.value) {
+                    showError(timeEndInput, 'Время окончания должно быть позже времени начала');
+                    hasErrors = true;
+                }
             }
 
             if (hasErrors) {
                 e.preventDefault();
             }
         });
-
-        function showError(input, message) {
-            const errorDiv = document.createElement('div');
-            errorDiv.className = 'form-error js-error';
-            errorDiv.style.color = 'red';
-            errorDiv.style.fontSize = '14px';
-            errorDiv.style.marginTop = '4px';
-            errorDiv.textContent = message;
-            input.parentNode.appendChild(errorDiv);
-            input.style.borderColor = 'red';
-        }
     }
 });
